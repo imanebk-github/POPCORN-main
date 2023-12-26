@@ -1,0 +1,264 @@
+.mainContent{
+padding-left: 30px;
+padding-right: 30px; 
+
+}
+
+.imgMovie {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 2s;
+}
+
+.imgMovie:hover {
+  transform: scale(1.1);
+}
+
+#titleCard {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+#poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.container {
+  overflow: hidden;
+}
+
+/* Card Overlay */
+/* Card modal */
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  width: 100%;
+  height: 100%;
+  /* padding: 1.3rem; */
+  /* min-height: 250px; */
+  background-color: rgba(10, 10, 10, 1);
+  /* border: 1px solid rgb(255, 255, 255); */
+  z-index: 2;
+}
+
+/* movie poster part with close button */
+.modalContainer{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.modal .moviePoster {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: 3%;
+  left: 95%;
+  font-size: 28px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-close:hover {
+  transform: scale(1.2);
+}
+
+.backdrop {
+  width: 100%;
+  z-index: 0;
+  
+}
+.bgBlack{
+  position: absolute;
+  /* opacity: 0.8; */
+  width: 100%;
+  height: 50%;
+  /*background-image: url('/assets/Untitled-1.png') ;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+  background-position: 0px 40px;
+  top: 50%;
+  box-shadow: inset 0 -100px 100px -20px rgb(0, 0, 0);
+}
+/* movie details */
+.MovieDetails {
+  display: block;
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  padding: 1rem;
+  z-index: 100000;
+  height: 100%;
+}
+
+#title {
+  position: absolute;
+  top: -40px;
+  font-weight: black;
+  font-size: 37px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.castVote{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+}
+#voteModal{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+#openVote{
+  position: absolute;
+  top: 38%;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  /*background-image: url('/assets/Untitled-1.png') ;*/
+  background-size: cover;
+  background-position: 1000px -650px;
+  width: 100%;
+  height: 60%;
+  z-index: 1000;
+  box-shadow: inset 0 -200px 100px -20px rgb(0, 0, 0);
+
+}
+.fa-circle-xmark{
+  position: absolute;
+  top: 56%;
+  left: 7%;
+  font-size: 34px;
+  cursor: pointer; 
+  color: rgb(187, 187, 187);
+}
+.fa-circle-xmark:hover{
+  color: rgb(255, 255, 255);
+}
+#genre{
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 100px;
+}
+.firstThumb{
+  font-size: 27px;
+  cursor: pointer;
+}
+.secondThumb{
+  position: absolute;
+  top: 50px;
+  left: 4%;
+  font-size: 48px;
+  cursor: pointer;
+  color: rgb(187, 187, 187);
+}
+.secondThumb:hover{
+  color: rgb(255, 255, 255);
+  }
+  .secondThumb:hover{
+    color: rgb(255, 255, 255);
+  }
+.fa-thumbs-down{
+  position: absolute;
+  top: 50px;
+  left: 14%;
+  font-size: 48px;
+  cursor: pointer;
+  color: rgb(187, 187, 187);
+}
+
+.fa-thumbs-down{
+  margin-top: 5px;
+}
+.fa-thumbs-down:hover{
+  color: rgb(255, 255, 255);
+  }
+  .fa-thumbs-down:hover{
+    color: rgb(255, 255, 255);
+  }
+  @keyframes hop {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hopping {
+    animation: hop 0.5s ease-in-out;
+}
+
+/* blurred background when card model is open */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 28, 28, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+.fa-star{
+  color: rgb(255, 255, 173);
+}
+.rating{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+}
+#vote, #voteCount{
+  font-size: 18px;
+  margin: 10px;
+}
+.playButton{
+  position: absolute;
+  top : 45%;
+  left: 45%;
+  font-size: 60px;
+  z-index: 10000;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.playButton:hover{
+  transform: scale(1.2);
+  color: rgb(207, 206, 206);
+}

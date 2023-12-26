@@ -1,0 +1,22 @@
+footer {
+    position: absolute;
+    left: 0;
+    background-color: black;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    margin-top:30px ;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+/* Adjust footer text color if needed */
+footer p {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+    color: white;
+
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>POPCORN MOVIE</title>
+    <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/herosection.css">
+    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+
+    <script src="https://kit.fontawesome.com/fc7fc33899.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo_popcorn.png">
+            </div>
+            <div class="search" id="searchButton">
+                <i id="search_icon" class="fa-solid fa-magnifying-glass"></i>
+                <i id='close_icon' class="fa-solid fa-xmark"></i>
+    
+                </i>
+    
+            </div>
+            <div class="search-popup" id="searchPopup">
+                <div class="search-text" id="searchText"></div>
+                <input type="text" id="searchInput" placeholder="Search for a movie...">
+                <button id="searchMovieButton">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+               
+            </div>
+            </nav>
+        </header>
+       <!-- Hero section -->
+       <div class="heroSection">
+        <div id="captioned-gallery">
+            <figure class="slider">
+              <figure>
+                <img src="/assets/retribution.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Retribution (2023)</h1>
+                     <div class="category"><div class="redLine"></div>Movies</div>
+                    </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/Oppenheimer.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Oppenheimer (2023)</h1>
+                    <div class="category"><div class="redLine"></div>Movies</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/bluebittle.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Blue Beetle (2023)</h1>
+                    <div class="category"><div class="redLine"></div>Movies</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/Chicago-fire.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>Chicago fire (2012)</h1>
+                    <div class="category"><div class="redLine"></div>Tv Shows</div>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="/assets/big-bang.jpg" alt>
+                <figcaption>
+                    <div class="playButtonF"><i class="fa-solid fa-play" style="color: #ffffff;"></i></div>
+                    <h1>The Big Bang Theory (2007)</h1>
+                    <div class="category"><div class="redLine"></div>Tv Shows</div>
+                </figcaption>
+              </figure>
+            </figure>
+          </div>
+    </div>
+<section class="mainContent">
+    <main id="mainContent">
+        <!-- Cards of films will go here -->
+        <!-- <div class="container">
+            <div id="poster">
+                <img src="./assets/movie.png" class="imgMovie" alt="imgMovie">
+                <p id="titleCard">Le sauveur</p>
+            </div>
+        </div> -->
+        <!-- Overlay Cards of films will go here -->
+        <div class="modalContainer hidden">
+            <section class="modal hidden">
+                <div class="moviePoster">
+                    <div class="bgBlack"></div>
+                    <div class="playButton"><i class="fa-regular fa-circle-play"></i></div>
+                    <img class="backdrop" alt="">
+                    <button class="btn-close">X</button>
+                </div>
+                <div class="MovieDetails">
+                    <h2 id = "title"></h2>
+                    <h3 id = "genre"></h3>
+                    <p id = "overview"></p>
+                   <div class="rating"><h5 id = "vote"></h5><i class="fa-solid fa-star"></i></div>
+                   <div class="castVote"><h5 id = "voteCount"></h5><i class="fa-regular fa-thumbs-up firstThumb"></i></div>
+                   <div id="openVote">
+                   <div id="voteModal"></h5><i class="fa-regular fa-thumbs-up secondThumb"></i><i class="fa-regular fa-thumbs-down"></i></div>
+                    <i class="fa-regular fa-circle-xmark"></i>
+                   </div>
+                  
+                </div>
+            </section>
+        </div>
+        <div class="overlay hidden"> </div>
+
+    </main>
+
+    <div class="searchResultsContainer">
+        <!-- Search results will be appended here -->
+    </div>
+
+    <!-- Add these lines for pagination -->
+    <div class="buttonPN">
+    <button id="prevPageButton"><span class="text"><i class="fa-solid fa-chevron-left"></i></span><span>Previous</span></button>
+    <button id="nextPageButton"><span class="text"><i class="fa-solid fa-chevron-right"></i></span><span>Next</span></button>
+    </div>
+    
+
+
+    <div id="slider">
+        <!-- Slider-->
+
+    <!-- For Movies -->
+    <!-- For Latest 2023 -->
+    <div class="carouselContainer">
+        <h2>Latest 2023</h2>
+        <div class="carouselOfLatest2023"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>Top Rated Movies</h2>
+        <div class="carouselOfTopRatedMovies"></div>
+    </div>
+    
+    
+    <div class="carouselContainer">
+        <h2>Upcoming Movies</h2>
+        <div class="carouselOfUpcomingMovies"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>Now Playing Movies</h2>
+        <div class="carouselOfNowPlayingMovies"></div>
+    </div>
+    
+    <!-- For TV Shows -->
+    <div class="carouselContainer">
+        <h2>Popular TV Shows</h2>
+        <div class="carouselOfPopularTV"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>Top Rated TV Shows</h2>
+        <div class="carouselOfTopRatedTV"></div>
+    </div>
+    <div class="carouselContainer">
+        <h2>On TV</h2>
+        <div class="carouselOfOnTV"></div>
+    </div>
+
+    </div>
+
+    <footer id="footer">
+        <p>&copy; 2023 Popcorn Movies. All rights reserved.</p>
+        <div class="icons">
+            <img class="icon" src="assets/insta.png">
+            <img class="icon" src="assets/TWITER.png">
+            <img class="icon" alt="join our community" src="assets/facebook.png">
+        </div>
+</section>
+ 
+        
+        </footer>
+    </footer>
+
+    <script src="./js/cards.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+
+</html>
